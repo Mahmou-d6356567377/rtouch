@@ -4,6 +4,7 @@ import 'package:rtouch/UI/auth/login_screan/login_screan.dart';
 import 'package:rtouch/UI/auth/make_account_screan/make_account_screan.dart';
 import 'package:rtouch/UI/intro_screans/onBoarding_screan/onBoarding_screan.dart';
 import 'package:rtouch/UI/intro_screans/splash_screan/splash_screan.dart';
+import 'package:rtouch/UI/main_screans/product_details_screan1/product_details_screan1.dart';
 import 'package:rtouch/UI/main_screans/product_details_screan2/product_details_screan2.dart';
 import 'package:rtouch/UI/pub_widgets/custom_button_nav_bar.dart';
 
@@ -53,7 +54,7 @@ abstract class AppRoutes {
        GoRoute(
         path: pds1,
         builder: (BuildContext context, GoRouterState state) {
-          return const ProductDetailsScrean2();
+          return const ProductDetailsScrean1();
         },
       ),
         GoRoute(

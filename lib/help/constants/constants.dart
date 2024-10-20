@@ -6,6 +6,7 @@ const kmainfont = 'CustomFont';
 const kmaincolor = 0xff3E1B44;
 const kmaincolor2 = 0xffEBB679;
 const kmaincolor3 = 0xff8B0D10;
+const kgoldenColor =  Color.fromARGB(255, 151, 151, 21);
 const BoxDecoration kmainboxDecoration = BoxDecoration(
   color: Colors.white,
 );
