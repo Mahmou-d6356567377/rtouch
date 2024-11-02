@@ -40,3 +40,15 @@ const arabicstyle6 = TextStyle(
   fontFamily: kmainfont,
     color: Colors.white,
 );
+
+const arabicstyle7 = TextStyle(
+  fontFamily: kmainfont,
+    fontWeight: FontWeight.bold,
+    color: Color.fromARGB(255, 106, 106, 106),
+);
+
+const arabicstyle8 = TextStyle(
+  fontFamily: kmainfont,
+    fontWeight: FontWeight.bold,
+    color: Color(kmaincolor),
+);

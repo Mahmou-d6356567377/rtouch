@@ -10,7 +10,7 @@ class CustomreportButton extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    TextEditingController _controller = TextEditingController();
+    TextEditingController controller = TextEditingController();
 
     return Padding(
       padding: const EdgeInsets.all(8.0),
@@ -27,7 +27,7 @@ class CustomreportButton extends StatelessWidget {
                       mainAxisSize: MainAxisSize.min,
                       children: [
                         TextField(
-                          controller: _controller,
+                          controller: controller,
                           decoration: InputDecoration(
                             hintText: 'نص الابلاغ',
                             hintStyle: const TextStyle(

@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:curved_navigation_bar/curved_navigation_bar.dart'; 
-import 'package:rtouch/UI/docs_screan/docs_screan.dart';
+import 'package:rtouch/UI/my_orders_screen/my_order_screen.dart';
 import 'package:rtouch/UI/main_screans/main_screan/main_screan.dart';
 import 'package:rtouch/UI/my_account_screans/my_account_screan.dart';
 import 'package:rtouch/UI/my_chat_screans/my_chat_screan.dart';
-import 'package:rtouch/UI/notification_screans/notification_screan.dart';
+import 'package:rtouch/UI/main_screans/notification_screans/notification_screan.dart';
 import 'package:rtouch/help/constants/constants.dart';
 
 class CustomBottomNavigationBar extends StatefulWidget {
@@ -92,7 +92,7 @@ class CustomBottomNavigationBarState extends State<CustomBottomNavigationBar> {
             animationCurve: Curves.fastOutSlowIn,
             
             items: <Widget>[
-              _buildIcon(Icons.document_scanner_rounded, 0),
+              _buildIcon(Icons.sticky_note_2_rounded, 0),
               _buildIcon(Icons.notifications, 1),
               _buildIcon(Icons.chat, 2),
               _buildIcon(Icons.person, 3),

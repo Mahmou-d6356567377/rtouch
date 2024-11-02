@@ -4,6 +4,21 @@ import 'package:rtouch/UI/auth/login_screan/login_screan.dart';
 import 'package:rtouch/UI/auth/make_account_screan/make_account_screan.dart';
 import 'package:rtouch/UI/intro_screans/onBoarding_screan/onBoarding_screan.dart';
 import 'package:rtouch/UI/intro_screans/splash_screan/splash_screan.dart';
+import 'package:rtouch/UI/main_screans/cart/cart_screan.dart';
+import 'package:rtouch/UI/main_screans/cart/screens/Map_screan/map_screan.dart';
+import 'package:rtouch/UI/main_screans/cart/screens/addresses_screen/addresses_screen.dart';
+import 'package:rtouch/UI/main_screans/cart/screens/create_address_screen/create_address_screen.dart';
+import 'package:rtouch/UI/main_screans/cart/screens/pay_screen/pay_screen.dart';
+import 'package:rtouch/UI/main_screans/category_screans/men_category/men_category.dart';
+import 'package:rtouch/UI/main_screans/category_screans/women_category/women_category.dart';
+import 'package:rtouch/UI/main_screans/main_menu_screans/main_menue_screan.dart';
+import 'package:rtouch/UI/main_screans/main_menu_screans/screens/about_devoloper/about_devoloper.dart';
+import 'package:rtouch/UI/main_screans/main_menu_screans/screens/callUs_screen/call_us_screen.dart';
+import 'package:rtouch/UI/main_screans/main_menu_screans/screens/complain_screen/complain_screen.dart';
+import 'package:rtouch/UI/main_screans/main_menu_screans/screens/favorites_screen/favorites_screen.dart';
+import 'package:rtouch/UI/main_screans/main_menu_screans/screens/setting/setting_screen.dart';
+import 'package:rtouch/UI/main_screans/main_menu_screans/screens/terms_conditions_screen/terms_and_conditions.dart';
+import 'package:rtouch/UI/main_screans/main_menu_screans/screens/who_we_are_screeen/who_we_are_screen.dart';
 import 'package:rtouch/UI/main_screans/product_details_screan1/product_details_screan1.dart';
 import 'package:rtouch/UI/main_screans/product_details_screan2/product_details_screan2.dart';
 import 'package:rtouch/UI/pub_widgets/custom_button_nav_bar.dart';
@@ -16,6 +31,21 @@ abstract class AppRoutes {
   static const cbnbs = '/custombuttomnavigationbarscrean';
   static const pds1 = '/productdetialscrean1';
   static const pds2 = '/productdetialscrean2';
+  static const wcs = '/womencategoryscrean';
+  static const mcs = '/mencategoryscrean';
+  static const mms = '/mainmenuscrean';
+  static const cs = '/cartscrean';
+  static const cas = '/createaddressscrean';
+  static const ps = '/payscrean';
+  static const as = '/addressesscrean';
+  static const cs2 = '/complainscrean';
+  static const wwrs = '/whowearescreen';
+  static const fs = '/favoritesscreen';
+  static const cus = '/callusscreen';
+  static const ads = '/aboutdevoloperscreen';
+  static const ss = '/settingscreen';
+  static const tcs = '/termsandconditionscreen';
+  static const gms = '/googlemapscreen';
 
   static final GoRouter router = GoRouter(
     initialLocation: sps,
@@ -63,6 +93,96 @@ abstract class AppRoutes {
           return const ProductDetailsScrean2();
         },
       ),
+        GoRoute(
+        path: wcs,
+        builder: (BuildContext context, GoRouterState state) {
+          return const WomenCategory();
+        },
+      ),
+       GoRoute(
+        path: mcs,
+        builder: (BuildContext context, GoRouterState state) {
+          return const MenCategory();
+        },
+      ), 
+         GoRoute(
+        path: mms,
+        builder: (BuildContext context, GoRouterState state) {
+          return const MainMenueScrean();
+        },
+      ),
+          GoRoute(
+        path: cs,
+        builder: (BuildContext context, GoRouterState state) {
+          return const CartScrean();
+        },
+      ), 
+      GoRoute(
+        path: cas,
+        builder: (BuildContext context, GoRouterState state) {
+          return const CreateAddressScreen();
+        },
+      ), 
+      GoRoute(
+        path: ps,
+        builder: (BuildContext context, GoRouterState state) {
+          return const PayScreen();
+        },
+      ), 
+        GoRoute(
+        path: wwrs,
+        builder: (BuildContext context, GoRouterState state) {
+          return const WhoWeAreScreen();
+        },
+      ), 
+        GoRoute(
+        path: fs,
+        builder: (BuildContext context, GoRouterState state) {
+          return const FavoritesScreen();
+        },
+      ),        
+              GoRoute(
+        path: cs2,
+        builder: (BuildContext context, GoRouterState state) {
+          return const ComplainScreen();
+        },
+      ),  
+         GoRoute(
+        path: cus,
+        builder: (BuildContext context, GoRouterState state) {
+          return const CallUsScreen();
+        },
+      ),
+      GoRoute(
+        path: ads,
+        builder: (BuildContext context, GoRouterState state) {
+          return const AboutDevoloper();
+        },
+      ),         
+      GoRoute(
+        path: ss,
+        builder: (BuildContext context, GoRouterState state) {
+          return const SettingScreen();
+        },
+      ),    
+      GoRoute(
+        path: tcs,
+        builder: (BuildContext context, GoRouterState state) {
+          return const TermsAndConditions();
+        },
+      ),   
+      GoRoute(
+        path: gms,
+        builder: (BuildContext context, GoRouterState state) {
+          return const MapScrean();
+        },
+      ),   
+      GoRoute(
+        path: as,
+        builder: (BuildContext context, GoRouterState state) {
+          return const AddressesScreen();
+        },
+      ),             
     ],
   );
 }

@@ -35,117 +35,119 @@ class _RegisterScreanState extends State<LoginScrean> {
     return Scaffold(  
       body: Form(
         key: _formKey,
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-
-        Container(
-          padding: const EdgeInsets.symmetric(vertical: 20),
-          decoration: const BoxDecoration(
-            shape: BoxShape.circle,
-            boxShadow: [
-              BoxShadow(
-                color: Colors.black45,
-                blurRadius: 6,
-                spreadRadius: 3,
-                offset: Offset(0, 0),
-              )
-            ]
-          ),
-          child: const CircleAvatar(
-            radius: 130,
-            backgroundImage: AssetImage(
-              img,
+        child: SingleChildScrollView(
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+          SizedBox(height: 60,),
+          Container(
+            padding: const EdgeInsets.symmetric(vertical: 20),
+            decoration: const BoxDecoration(
+              shape: BoxShape.circle,
+              boxShadow: [
+                BoxShadow(
+                  color: Colors.black45,
+                  blurRadius: 6,
+                  spreadRadius: 3,
+                  offset: Offset(0, 0),
+                )
+              ]
             ),
-          ),
-        ),
-               const Text( 'مرحبا بعودتك' , style: arabicstyle1),
-        
-             CustomIntlPhoneField(
-                    hintText: 'رقم الجوال',
-                    controller: phonecontroller,
-                  ),
-            PasswordTextField(
-              hintText: 'الرقم السرى',
-              controller: passwordController,
-            ),
-            const Row(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                 Text( 'هل نسيت الرقم السري ؟' , style:arabicstyle2),
-              ],
-            ),
-            const SizedBox(
-              height: 100,
-            ),
-         
-           Padding(
-             padding: const EdgeInsets.symmetric(horizontal: 8.0),
-             child: ElevatedButton(
-                 onPressed: () {
-                  if (_formKey.currentState!.validate()) {
-               _submitForm(
-                 emailOrphone1: checkphone
-                     ? phonecontroller.text
-                     : emailController.text,
-                 password: passwordController.text,
-                 isphone: checkphone,
-               );
-             } else {
-               ScaffoldMessenger.of(context)
-                   .showSnackBar(const SnackBar(
-                       content:
-                   Text('Validation Error')));
-             }
-                 },
-                 style: ElevatedButton.styleFrom(
-                   backgroundColor: const Color(kmaincolor), 
-                   minimumSize: const Size.fromHeight(50), 
-                   padding: const EdgeInsets.symmetric(vertical: 15), 
-                   shape: RoundedRectangleBorder(
-                     borderRadius: BorderRadius.circular(20), 
-                   ),
-                 ),
-                 child: const Text(
-                   'تسجيل الدخول',
-                   style: TextStyle(
-                     color: Colors.white, 
-                     fontSize: 18,
-                     fontFamily: kmainfont,  
-                   ),
-                 ),
-               ),
-           ),
-         GestureDetector(
-              onTap: () {
-                GoRouter.of(context).push(AppRoutes.cbnbs);
-              },
-              child: const Padding(
-                padding: EdgeInsets.only(bottom: 10),
-                child:
-                 Text(
-                   'متابعه كزائر',
-                   style: arabicstyle3,
-                 )
-        
-                     ),
+            child: const CircleAvatar(
+              radius: 130,
+              backgroundImage: AssetImage(
+                img,
               ),
-            Row(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                GestureDetector(
-                  onTap: () {
-                  GoRouter.of(context).push(AppRoutes.bas);
-                  },
-                  child: const Text('سجل الان',
-                      style: arabicstyle2
-                      ),
-                ),
-                const Text( 'لا تملك حساب ؟', style: arabicstyle4,),
-              ],
             ),
+          ),
+                 const Text( 'مرحبا بعودتك' , style: arabicstyle1),
+          
+               CustomIntlPhoneField(
+                      hintText: 'رقم الجوال',
+                      controller: phonecontroller,
+                    ),
+              PasswordTextField(
+                hintText: 'الرقم السرى',
+                controller: passwordController,
+              ),
+              const Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                   Text( 'هل نسيت الرقم السري ؟' , style:arabicstyle2),
+                ],
+              ),
+              const SizedBox(
+                height: 100,
+              ),
            
-          ],
+             Padding(
+               padding: const EdgeInsets.symmetric(horizontal: 8.0),
+               child: ElevatedButton(
+                   onPressed: () {
+                    if (_formKey.currentState!.validate()) {
+                 _submitForm(
+                   emailOrphone1: checkphone
+                       ? phonecontroller.text
+                       : emailController.text,
+                   password: passwordController.text,
+                   isphone: checkphone,
+                 );
+               } else {
+                 ScaffoldMessenger.of(context)
+                     .showSnackBar(const SnackBar(
+                         content:
+                     Text('Validation Error')));
+               }
+                   },
+                   style: ElevatedButton.styleFrom(
+                     backgroundColor: const Color(kmaincolor), 
+                     minimumSize: const Size.fromHeight(50), 
+                     padding: const EdgeInsets.symmetric(vertical: 15), 
+                     shape: RoundedRectangleBorder(
+                       borderRadius: BorderRadius.circular(20), 
+                     ),
+                   ),
+                   child: const Text(
+                     'تسجيل الدخول',
+                     style: TextStyle(
+                       color: Colors.white, 
+                       fontSize: 18,
+                       fontFamily: kmainfont,  
+                     ),
+                   ),
+                 ),
+             ),
+           GestureDetector(
+                onTap: () {
+                  GoRouter.of(context).push(AppRoutes.cbnbs);
+                },
+                child: const Padding(
+                  padding: EdgeInsets.only(bottom: 10),
+                  child:
+                   Text(
+                     'متابعه كزائر',
+                     style: arabicstyle3,
+                   )
+          
+                       ),
+                ),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  GestureDetector(
+                    onTap: () {
+                    GoRouter.of(context).push(AppRoutes.bas);
+                    },
+                    child: const Text('سجل الان',
+                        style: arabicstyle2
+                        ),
+                  ),
+                  const Text( 'لا تملك حساب ؟', style: arabicstyle4,),
+                ],
+              ),
+             
+            ],
+          ),
         ),
       ),
     );

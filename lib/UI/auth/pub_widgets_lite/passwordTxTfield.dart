@@ -22,23 +22,22 @@ class _PasswordTextFieldState extends State<PasswordTextField> {
     return Padding(
       padding: const EdgeInsets.all(8.0),
       child: Container(
-        width: 400,  // CSS width
-        height: 63,  // CSS height
+        width: 400,  
+        height: 63,  
         decoration: BoxDecoration(
-          color: Colors.white,  // Background color from CSS
-          borderRadius: BorderRadius.circular(10),  // CSS border-radius
+          color: Colors.white,
+          borderRadius: BorderRadius.circular(10), 
           boxShadow: [
             BoxShadow(
-              color: Colors.black.withOpacity(0.16),  // Shadow from CSS
-              blurRadius: 6,  // Shadow blur radius
-              offset: const Offset(0, 3),  // Shadow offset from CSS
+              color: Colors.black.withOpacity(0.16), 
+              blurRadius: 6,
+              offset: const Offset(0, 3),
             ),
-            // Optional inset shadow for a similar effect as CSS
             BoxShadow(
               color: Colors.black.withOpacity(0.16),
               blurRadius: 6,
               offset: const Offset(0, 3),
-              spreadRadius: -6,  // Simulates the inset shadow
+              spreadRadius: -6, 
             ),
           ],
         ),
@@ -57,17 +56,15 @@ class _PasswordTextFieldState extends State<PasswordTextField> {
             filled: true,
             fillColor: Colors.white,  // Background color for the field
             hintText: widget.hintText,
-            hintStyle: const TextStyle(),
-            alignLabelWithHint: true,
             hintTextDirection: TextDirection.rtl,  // RTL hint text direction
-            enabledBorder: OutlineInputBorder(
-              borderRadius: BorderRadius.circular(10),  // CSS border-radius
-              borderSide: BorderSide.none,  // Remove border, only show shadow
-            ),
-            focusedBorder: OutlineInputBorder(
-              borderRadius: BorderRadius.circular(10),
-              borderSide: BorderSide.none,  // Keep no border on focus
-            ),
+          focusedBorder: OutlineInputBorder(
+            borderSide: BorderSide.none,
+            borderRadius: BorderRadius.circular(10),
+          ),
+          enabledBorder: OutlineInputBorder(
+            borderSide: BorderSide.none,
+            borderRadius: BorderRadius.circular(10),
+          ),
             prefixIcon: IconButton(
               onPressed: () {
                 setState(() {

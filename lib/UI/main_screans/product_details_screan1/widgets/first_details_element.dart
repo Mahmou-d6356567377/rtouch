@@ -49,7 +49,7 @@ class FirstDetailsElement extends StatelessWidget {
                         child: Row(
                           mainAxisAlignment: MainAxisAlignment.end,
                           children: [
-                            const Followbutton(),
+                            const Followbutton(height: 30, width: 100, fontsize: 20,),
                             Text('(', style:arabicstyle5.copyWith(fontSize: 20),),
                             Text(' 6 ', style:arabicstyle5.copyWith(fontSize: 20, color: kgoldenColor),),
                             Text(')', style:arabicstyle5.copyWith(fontSize: 20),),

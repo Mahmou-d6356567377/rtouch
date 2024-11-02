@@ -17,10 +17,13 @@ class ProductDetailsScrean2 extends StatefulWidget {
 }
 
 class _ProductDetailsScrean2State extends State<ProductDetailsScrean2> {
-  bool xLclicked = false;
+  String? selectedSize;
+
+  // List of available sizes
+  final List<String> sizes = ['L', 'XL', 'XXL'];
+
   @override
   Widget build(BuildContext context) {
-
     return Scaffold(
       body: Container(
         decoration: const BoxDecoration(
@@ -34,10 +37,10 @@ class _ProductDetailsScrean2State extends State<ProductDetailsScrean2> {
               ),
               child: Column(
                 children: [
-                  const FrstItmProductScrean( bigimg: img, smalimg: img, title: 'مها'),
+                  const FrstItmProductScrean(
+                      bigimg: img, smalimg: img, title: 'مها'),
                   Container(
                     padding: const EdgeInsets.symmetric(horizontal: 10),
-
                     child: Row(
                       mainAxisAlignment: MainAxisAlignment.end,
                       children: [
@@ -46,13 +49,14 @@ class _ProductDetailsScrean2State extends State<ProductDetailsScrean2> {
                           style: arabicstyle5.copyWith(
                               fontSize: 20, fontWeight: FontWeight.bold),
                         ),
-                        CustomreportButton(),
+                        const CustomreportButton(),
                       ],
                     ),
                   ),
-                  const ProductDescRow(productdescription: 'فستان كامل بالشنطه والحذاء'),
+                  const ProductDescRow(
+                      productdescription: 'فستان كامل بالشنطه والحذاء'),
                   ThirdRowProductDetial(
-                    xLclicked: xLclicked,
+                    xLclicked: selectedSize == 'XL',
                     quantity: 60,
                   ),
                   Padding(
@@ -89,29 +93,35 @@ class _ProductDetailsScrean2State extends State<ProductDetailsScrean2> {
                                 'جدول المقاسات',
                                 style: arabicstyle5.copyWith(fontSize: 15),
                               ),
+                              Container(
+                                  height: 25,
+                                  margin: const EdgeInsets.all(5),
+                                  child: Image.asset(kmeasure))
                             ],
                           ),
                         ),
-                        const Padding(
-                          padding: EdgeInsets.only(right: 25.0),
-                          child: Icon(Icons.add),
-                        ),
-                        GestureDetector(
-                          onTap: () {
-                            setState(() {
-                              xLclicked = !xLclicked;
-                              print('xlclicked $xLclicked');
-                            });
-                          },
-                          child: Container(
-                            padding: const EdgeInsets.all(8),
-                            decoration: BoxDecoration(
+                        // Render size options
+                        for (var size in sizes)
+                          GestureDetector(
+                            onTap: () {
+                              setState(() {
+                                selectedSize =
+                                    selectedSize == size ? null : size;
+                              });
+                              print('Selected size: $selectedSize');
+                            },
+                            child: Container(
+                              padding: const EdgeInsets.all(8),
+                              margin: const EdgeInsets.symmetric(horizontal: 4),
+                              decoration: BoxDecoration(
                                 borderRadius: BorderRadius.circular(12),
-                                color: Colors.white,
+                                color: selectedSize == size
+                                    ? Colors.blueGrey
+                                    : Colors.white,
                                 border: Border.all(
                                     width: 2,
-                                    color:
-                                        const Color.fromARGB(255, 62, 75, 82)),
+                                    color: const Color.fromARGB(
+                                        255, 62, 75, 82)),
                                 boxShadow: [
                                   BoxShadow(
                                     color: Colors.grey.withOpacity(.9),
@@ -119,19 +129,19 @@ class _ProductDetailsScrean2State extends State<ProductDetailsScrean2> {
                                     spreadRadius: 1,
                                     offset: const Offset(0, 0),
                                   ),
-                                ]),
-                            child: Text(
-                              'XXL',
-                              style: arabicstyle5.copyWith(fontSize: 15),
+                                ],
+                              ),
+                              child: Text(
+                                size,
+                                style: arabicstyle5.copyWith(fontSize: 15),
+                              ),
                             ),
                           ),
-                        ),
                       ],
                     ),
                   ),
-                  Visibility(
-                    visible: xLclicked,
-                    child: Padding(
+                  if (selectedSize != null)
+                    Padding(
                       padding: const EdgeInsets.only(right: 10.0, top: 15),
                       child: Row(
                         mainAxisAlignment: MainAxisAlignment.end,
@@ -140,14 +150,12 @@ class _ProductDetailsScrean2State extends State<ProductDetailsScrean2> {
                             'اللون',
                             style: arabicstyle5.copyWith(
                                 fontSize: 18, fontWeight: FontWeight.bold),
-                          )
+                          ),
                         ],
                       ),
                     ),
-                  ),
-                  Visibility(
-                    visible: xLclicked,
-                    child: Padding(
+                  if (selectedSize != null)
+                    Padding(
                       padding: const EdgeInsets.only(right: 10.0, top: 15),
                       child: Row(
                         mainAxisAlignment: MainAxisAlignment.end,
@@ -173,28 +181,31 @@ class _ProductDetailsScrean2State extends State<ProductDetailsScrean2> {
                                 ),
                               ),
                             ],
-                          )
+                          ),
                         ],
                       ),
                     ),
-                  ),
                   const FourthRowProductDetails(
                     price: 43,
                   ),
                   Container(
-                      decoration: const BoxDecoration(color: Colors.white),
-                      child: const MainRow2TXT(
-                          text1: 'الكل', text2: 'المنتجات المشابهه')),
+                    decoration: const BoxDecoration(color: Colors.white),
+                    child: const MainRow2TXT(
+                        text1: 'الكل', text2: 'المنتجات المشابهه'),
+                  ),
                   Container(
-                      decoration: const BoxDecoration(color: Colors.white),
-                      child: const FifthMainList(width: 200, height: 220)),
+                    decoration: const BoxDecoration(color: Colors.white),
+                    child: const FifthMainList(width: 200, height: 220),
+                  ),
                   Container(
-                      decoration: const BoxDecoration(color: Colors.white),
-                      child: const MainRow2TXT(
-                          text1: 'الكل', text2: 'اخر ما تم مشاهدته')),
+                    decoration: const BoxDecoration(color: Colors.white),
+                    child: const MainRow2TXT(
+                        text1: 'الكل', text2: 'اخر ما تم مشاهدته'),
+                  ),
                   Container(
-                      decoration: const BoxDecoration(color: Colors.white),
-                      child: const FifthMainList(width: 200, height: 220)),
+                    decoration: const BoxDecoration(color: Colors.white),
+                    child: const FifthMainList(width: 200, height: 220),
+                  ),
                 ],
               ),
             ),
