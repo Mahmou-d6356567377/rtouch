@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 import 'package:rtouch/UI/auth/pub_widgets_lite/custom_phone_text_field.dart';
 import 'package:rtouch/UI/auth/pub_widgets_lite/passwordTxTfield.dart';
+import 'package:rtouch/UI/intro_screans/widgets/intro_logo_widget.dart';
 import 'package:rtouch/help/constants/constants.dart';
 import 'package:rtouch/help/fonts/fonts.dart';
 import 'package:rtouch/help/routes/app_routes.dart';
@@ -39,27 +40,8 @@ class _RegisterScreanState extends State<LoginScrean> {
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-          SizedBox(height: 60,),
-          Container(
-            padding: const EdgeInsets.symmetric(vertical: 20),
-            decoration: const BoxDecoration(
-              shape: BoxShape.circle,
-              boxShadow: [
-                BoxShadow(
-                  color: Colors.black45,
-                  blurRadius: 6,
-                  spreadRadius: 3,
-                  offset: Offset(0, 0),
-                )
-              ]
-            ),
-            child: const CircleAvatar(
-              radius: 130,
-              backgroundImage: AssetImage(
-                img,
-              ),
-            ),
-          ),
+          const SizedBox(height: 60,),
+            const IntroLogoWidget(),
                  const Text( 'مرحبا بعودتك' , style: arabicstyle1),
           
                CustomIntlPhoneField(

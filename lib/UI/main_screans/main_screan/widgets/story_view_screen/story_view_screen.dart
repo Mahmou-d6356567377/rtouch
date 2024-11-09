@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:rtouch/UI/main_screans/main_screan/widgets/story_view_screen/widgets/custom_favorite_icon.dart';
 import 'package:rtouch/UI/main_screans/product_details_screan1/widgets/followButton.dart';
 import 'package:rtouch/help/constants/constants.dart';
 import 'package:rtouch/help/fonts/fonts.dart';
@@ -57,7 +58,7 @@ class StoryViewScreen extends StatelessWidget {
           Align(
             alignment: Alignment.bottomCenter,
             child: Container(
-              margin: EdgeInsets.all(15),
+              margin: const EdgeInsets.all(15),
               padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 8),
               decoration: BoxDecoration(
               color: const Color(kmaincolor).withOpacity(.4),
@@ -68,24 +69,14 @@ class StoryViewScreen extends StatelessWidget {
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
-                                   IconButton(
-                    icon: Icon(Icons.remove_red_eye, color: Colors.white),
-                    onPressed: () {
-                      // Add your favorite action
-                    },
-                  ),
-                  IconButton(
-                    icon: Icon(Icons.favorite, color: Colors.white),
-                    onPressed: () {
-                      // Add your share action
-                    },
-                  ),
-                  Expanded(
+                 const  Icon(Icons.remove_red_eye, color: Colors.white),
+                  const CustomFavoriteIcon(),
+                  const Expanded(
                     child: Column(
                     children: [
                       Text('تصميمات ليلى', style: arabicstyle6,),
                       Padding(
-                        padding: const EdgeInsets.only(top: 5.0),
+                        padding:  EdgeInsets.only(top: 5.0),
                         child: Followbutton(height: 15, width: 50, fontsize: 10,),
                       ),
                     ],

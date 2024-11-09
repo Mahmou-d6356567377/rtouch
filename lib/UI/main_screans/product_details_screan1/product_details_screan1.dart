@@ -20,14 +20,14 @@ class ProductDetailsScrean1 extends StatelessWidget {
              padding: const EdgeInsets.symmetric(horizontal: 10.0),
              child: Text(kintrotxt, style: arabicstyle4.copyWith(fontSize: 15, fontWeight: FontWeight.normal),),
            ),
-           const SingleChildScrollView(
+            SingleChildScrollView(
              child: Column(
                children: [
-                            MainRow2TXT(text1: '', text2: 'القصص'),
+                            MainRow2TXT(text1: '', text2: 'القصص', fun: (){},),
             ThirdMainList(),
-            MainRow2TXT(text1: '', text2: 'الاقسام'),
+            MainRow2TXT(text1: '', text2: 'الاقسام',fun: (){},),
             SecondMainList(),
-             MainRow2TXT(text1: '', text2: 'المنتجات'),
+             MainRow2TXT(text1: '', text2: 'المنتجات', fun: (){},),
                ],
              ),
            ),

@@ -59,20 +59,52 @@ class MainScrean1 extends StatelessWidget {
       ),
       body: SingleChildScrollView(
         controller: controller,
-        child: const Column(
+        child: Column(
           children: [
             FirstMainList(),
-            MainRow2TXT(text1: 'الكل', text2: 'الاقسام'),
+            MainRow2TXT(
+              text1: 'الكل',
+              text2: 'الاقسام',
+              fun: () {
+                GoRouter.of(context).push(AppRoutes.cs3);
+              },
+            ),
             SecondMainList(),
-            MainRow2TXT(text1: 'الكل', text2: 'القصص'),
+            MainRow2TXT(
+              text1: 'الكل',
+              text2: 'القصص',
+              fun: () {
+                GoRouter.of(context).push(AppRoutes.ss2);
+              },
+            ),
             ThirdMainList(),
-            MainRow2TXT(text1: 'الكل', text2: 'مقدمى الخدمه'),
+            MainRow2TXT(
+              text1: 'الكل',
+              text2: 'مقدمى الخدمه',
+              fun: () {
+                GoRouter.of(context).push(AppRoutes.sps2);
+              },
+            ),
             FourthMainList(),
-            MainRow2TXT(text1: 'الكل', text2: 'المنتجات الجديدة'),
+            MainRow2TXT(
+              text1: 'الكل',
+              text2: 'المنتجات الجديدة',
+              fun: () {},
+            ),
             FifthMainList(width: 270, height: 240),
-            MainRow2TXT(text1: 'الكل', text2: 'المنتجات الاكثر مبيعا'),
+            MainRow2TXT(
+              text1: 'الكل',
+              text2: 'المنتجات الاكثر مبيعا',
+              fun: () {},
+            ),
             FifthMainList(width: 200, height: 220),
-            MainRow2TXT(text1: 'الكل', text2: 'المنتجات'),
+            MainRow2TXT(
+              text1: 'الكل',
+              text2: 'المنتجات',
+              fun: () {
+                GoRouter.of(context).push(AppRoutes.pss);
+              },
+            ),
             FifthMainList(width: 200, height: 220),
           ],
         ),

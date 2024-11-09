@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
-import 'package:rtouch/UI/main_screans/cart/widgets/custom_button1.dart';
+import 'package:rtouch/UI/pub_widgets/custom_button1.dart';
 import 'package:rtouch/UI/main_screans/cart/widgets/cart_container_data_row.dart';
 import 'package:rtouch/UI/main_screans/cart/widgets/cart_data_container.dart';
 import 'package:rtouch/UI/main_screans/cart/widgets/cart_product_item.dart';
@@ -20,6 +20,13 @@ class CartScrean extends StatelessWidget {
           style: arabicstyle5.copyWith(fontSize: 25),
         ),
         centerTitle: true,
+        actions: [
+          IconButton(
+              onPressed: () {
+                GoRouter.of(context).push(AppRoutes.cs4);
+              },
+              icon:  const Icon(Icons.chat, color: Color(kmaincolor),))
+        ],
         leading: IconButton(
             onPressed: () {
               GoRouter.of(context).pop();

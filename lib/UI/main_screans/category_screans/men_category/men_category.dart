@@ -66,7 +66,10 @@ class MenCategory extends StatelessWidget {
                               width: double.infinity,
                               child: ClipRRect(
                                 borderRadius: BorderRadius.circular(17),
-                                child: Image.asset(img, fit: BoxFit.cover,)))),
+                                child: Image.asset(img, fit: BoxFit.cover,),
+                                ),
+                                ),
+                                ),
                             Expanded(
                               flex: 2,
                               child: Padding(

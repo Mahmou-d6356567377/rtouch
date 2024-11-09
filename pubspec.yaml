@@ -33,7 +33,7 @@ flutter:
   uses-material-design: true
   assets:
     - assets/videos/splash.mp4
-    - assets/img/ll.jpg
+    - assets/icons/logo_1.png
     - assets/icons/stc.png
     - assets/icons/mada.png
     - assets/icons/master.png
@@ -44,6 +44,8 @@ flutter:
     - assets/icons/needle.png
     - assets/icons/folder.png
     - assets/icons/measuring_tape.png
+    - assets/icons/profile_woman.png
+    - assets/icons/profile_woman2.png
 
   fonts:
     - family: CustomFont

@@ -9,6 +9,7 @@ import 'package:rtouch/UI/main_screans/cart/screens/Map_screan/map_screan.dart';
 import 'package:rtouch/UI/main_screans/cart/screens/addresses_screen/addresses_screen.dart';
 import 'package:rtouch/UI/main_screans/cart/screens/create_address_screen/create_address_screen.dart';
 import 'package:rtouch/UI/main_screans/cart/screens/pay_screen/pay_screen.dart';
+import 'package:rtouch/UI/main_screans/cart/screens/special_size_screen/special_size_screen.dart';
 import 'package:rtouch/UI/main_screans/category_screans/men_category/men_category.dart';
 import 'package:rtouch/UI/main_screans/category_screans/women_category/women_category.dart';
 import 'package:rtouch/UI/main_screans/main_menu_screans/main_menue_screan.dart';
@@ -19,8 +20,13 @@ import 'package:rtouch/UI/main_screans/main_menu_screans/screens/favorites_scree
 import 'package:rtouch/UI/main_screans/main_menu_screans/screens/setting/setting_screen.dart';
 import 'package:rtouch/UI/main_screans/main_menu_screans/screens/terms_conditions_screen/terms_and_conditions.dart';
 import 'package:rtouch/UI/main_screans/main_menu_screans/screens/who_we_are_screeen/who_we_are_screen.dart';
+import 'package:rtouch/UI/main_screans/main_screan/widgets/all_screans/categories_screan.dart';
+import 'package:rtouch/UI/main_screans/main_screan/widgets/all_screans/products_screen.dart';
+import 'package:rtouch/UI/main_screans/main_screan/widgets/all_screans/service_provider_all.dart';
+import 'package:rtouch/UI/main_screans/main_screan/widgets/all_screans/story_screans.dart';
 import 'package:rtouch/UI/main_screans/product_details_screan1/product_details_screan1.dart';
 import 'package:rtouch/UI/main_screans/product_details_screan2/product_details_screan2.dart';
+import 'package:rtouch/UI/my_chat_screans/my_chat_screan.dart';
 import 'package:rtouch/UI/pub_widgets/custom_button_nav_bar.dart';
 
 abstract class AppRoutes {
@@ -46,6 +52,12 @@ abstract class AppRoutes {
   static const ss = '/settingscreen';
   static const tcs = '/termsandconditionscreen';
   static const gms = '/googlemapscreen';
+  static const sps2 = '/serviceproviderscreen';
+  static const cs3 = '/categoryscreen';
+  static const cs4 = '/chatscreen';
+  static const ss2 = '/storiesscreen';
+  static const pss = '/productsscreen';
+  static const ssc = '/specialsizescreen';
 
   static final GoRouter router = GoRouter(
     initialLocation: sps,
@@ -170,7 +182,7 @@ abstract class AppRoutes {
         builder: (BuildContext context, GoRouterState state) {
           return const TermsAndConditions();
         },
-      ),   
+      ),  
       GoRoute(
         path: gms,
         builder: (BuildContext context, GoRouterState state) {
@@ -182,7 +194,43 @@ abstract class AppRoutes {
         builder: (BuildContext context, GoRouterState state) {
           return const AddressesScreen();
         },
-      ),             
+      ),
+      GoRoute(
+        path: sps2,
+        builder: (BuildContext context, GoRouterState state) {
+          return const ServiceProviderAll();
+        },
+      ),
+       GoRoute(
+        path: cs3,
+        builder: (BuildContext context, GoRouterState state) {
+          return const CategoriesScrean();
+        },
+      ), 
+        GoRoute(
+        path: ss2,
+        builder: (BuildContext context, GoRouterState state) {
+          return const StoriesScrean();
+        },
+      ),  
+       GoRoute(
+        path: pss,
+        builder: (BuildContext context, GoRouterState state) {
+          return const ProductsScreen();
+        },
+      ),  
+       GoRoute(
+        path: cs4,
+        builder: (BuildContext context, GoRouterState state) {
+          return const MyChatScrean();
+        },
+      ),   
+      GoRoute(
+        path: ssc,
+        builder: (BuildContext context, GoRouterState state) {
+          return const SpecialSizeScreen();
+        },
+      ),              
     ],
   );
 }

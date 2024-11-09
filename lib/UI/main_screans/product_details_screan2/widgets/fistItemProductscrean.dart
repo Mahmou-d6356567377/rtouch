@@ -80,7 +80,9 @@ class FrstItmProductScrean extends StatelessWidget {
                       kmaincolor,
                     )),
                 child: IconButton(
-                    onPressed: () {},
+                    onPressed: () {
+                      GoRouter.of(context).push(AppRoutes.cs);
+                    },
                     icon: const Icon(
                       Icons.shopping_cart,
                       color: Colors.white,

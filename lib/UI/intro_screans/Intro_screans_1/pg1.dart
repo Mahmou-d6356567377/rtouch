@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:rtouch/UI/intro_screans/widgets/intro_logo_widget.dart';
 import 'package:rtouch/help/constants/constants.dart';
 import 'package:rtouch/help/fonts/fonts.dart';
 
@@ -12,26 +13,7 @@ class IntroPage1 extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.center,
       children: [
 
-        Container(
-          padding: const EdgeInsets.symmetric(vertical: 20),
-          decoration: const BoxDecoration(
-            shape: BoxShape.circle,
-            boxShadow: [
-              BoxShadow(
-                color: Colors.black45,
-                blurRadius: 6,
-                spreadRadius: 3,
-                offset: Offset(0, 0),
-              )
-            ]
-          ),
-          child: const CircleAvatar(
-            radius: 130,
-            backgroundImage: AssetImage(
-              img,
-            ),
-          ),
-        ),
+        const IntroLogoWidget(),
        Padding(
          padding: const EdgeInsets.symmetric(horizontal: 12.0),
          child: Column(
