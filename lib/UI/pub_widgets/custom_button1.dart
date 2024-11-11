@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:rtouch/help/constants/constants.dart';
 import 'package:rtouch/help/fonts/fonts.dart';
 
@@ -13,7 +14,7 @@ class CustomButton1 extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      margin: const EdgeInsets.symmetric(horizontal: 25, vertical: 20),
+      margin:  EdgeInsets.symmetric(horizontal: 15.w, vertical: 10.h),
       width: MediaQuery.sizeOf(context).width,
       child: ElevatedButton(
         onPressed: function,

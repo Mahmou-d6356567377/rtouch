@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class PasswordTextField extends StatefulWidget {
   final String hintText;
@@ -20,10 +21,10 @@ class _PasswordTextFieldState extends State<PasswordTextField> {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.all(8.0),
+      padding:  EdgeInsets.all(8.0.h),
       child: Container(
-        width: 400,  
-        height: 63,  
+        width: 400.h,  
+        height: 63.w,  
         decoration: BoxDecoration(
           color: Colors.white,
           borderRadius: BorderRadius.circular(10), 
@@ -61,6 +62,10 @@ class _PasswordTextFieldState extends State<PasswordTextField> {
             borderSide: BorderSide.none,
             borderRadius: BorderRadius.circular(10),
           ),
+           focusedErrorBorder: OutlineInputBorder(
+              borderSide: BorderSide.none,
+              borderRadius: BorderRadius.circular(10),
+            ),
           enabledBorder: OutlineInputBorder(
             borderSide: BorderSide.none,
             borderRadius: BorderRadius.circular(10),

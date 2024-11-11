@@ -96,7 +96,7 @@ class _DocsScreanState extends State<DocsScrean> {
             ],
           ),
         
-        flag1?  OrderDetailsContainer():Padding(
+        flag1?  const  OrderDetailsContainer() : Padding(
           padding: const EdgeInsets.only(top: 60.0),
           child: Image.asset(kfolder),
         ),
